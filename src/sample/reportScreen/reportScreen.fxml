@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="1600" minWidth="1200" prefHeight="1600.0" prefWidth="1200.0" stylesheets="/sample/loginScreen/login.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.reportScreen.reportScreenController">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <StackPane prefHeight="103.0" prefWidth="600.0" style="-fx-background-color: #243752;">
+                    <children>
+                        <TextFlow id="test" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #243752;" textAlignment="CENTER">
+                            <children>
+                                <VBox>
+                                    <children>
+                                        <TextField alignment="CENTER" editable="false" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="1204.0" styleClass="title" text="Alpharetta High School">
+                                            <font>
+                                                <Font size="32.0" />
+                                            </font></TextField>
+                                        <TextField alignment="CENTER" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="1204.0" styleClass="title" text="Library Management System">
+                                            <font>
+                                                <Font size="32.0" />
+                                            </font></TextField>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </TextFlow>
+                    </children>
+                </StackPane>
+                <StackPane prefHeight="300.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <GridPane style="-fx-background-color: #C7C7C7;">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <JFXButton fx:id="backButton" alignment="CENTER" buttonType="RAISED" layoutX="113.0" layoutY="154.0" maxWidth="324.0" minWidth="324.0" mnemonicParsing="false" onAction="#backButtonClicked" prefWidth="324.0" style="-fx-background-color: #00000000; -fx-background-image: url('/sample/images/icons8-return.png'); -fx-background-repeat: no-repeat;" text="Back" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                    <font>
+                                        <Font size="43.0" />
+                                    </font>
+                                </JFXButton>
+                        <TabPane GridPane.columnSpan="3" GridPane.rowSpan="3">
+                           <tabs>
+                              <Tab text="Books Checked Out">
+                                 <content>
+                                    <TableView prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
+                              </Tab>
+                               <Tab text="Book Fines">
+                                   <content>
+                                       <TableView prefHeight="200.0" prefWidth="200.0">
+                                           <columns>
+                                               <TableColumn prefWidth="75.0" text="C1" />
+                                               <TableColumn prefWidth="75.0" text="C2" />
+                                           </columns>
+                                       </TableView>
+                                   </content>
+                               </Tab>
+                           </tabs>
+                           <GridPane.margin>
+                              <Insets left="50.0" right="50.0" top="50.0" />
+                           </GridPane.margin>
+                        </TabPane>
+                            </children>
+                        </GridPane>
+                    </children></StackPane>
+            </children></VBox>
+    </children>
+</AnchorPane>

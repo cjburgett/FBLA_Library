@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="rootPane" maxHeight="1600.0" maxWidth="1200.0" minHeight="1600" minWidth="1200" prefHeight="1600.0" prefWidth="1200.0" stylesheets="/sample/loginScreen/login.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.checkAndReturnScreen.checkAndReturnScreenController">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <StackPane prefHeight="103.0" prefWidth="600.0" style="-fx-background-color: #243752;">
+                    <children>
+                        <TextFlow id="test" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #243752;" textAlignment="CENTER">
+                            <children>
+                                <VBox>
+                                    <children>
+                                        <TextField alignment="CENTER" editable="false" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="1204.0" styleClass="title" text="Alpharetta High School">
+                                            <font>
+                                                <Font size="32.0" />
+                                            </font></TextField>
+                                        <TextField alignment="CENTER" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="1204.0" styleClass="title" text="Library Management System">
+                                            <font>
+                                                <Font size="32.0" />
+                                            </font></TextField>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </TextFlow>
+                    </children>
+                </StackPane>
+                <StackPane prefHeight="300.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="4" GridPane.rowSpan="4">
+                          <tabs>
+                            <Tab text="Check Out Book">
+                                 <content>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                           <TableView fx:id="booktable" maxHeight="200.0" maxWidth="800.0" minHeight="200.0" minWidth="800.0" prefHeight="200.0" prefWidth="800.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                               <columns>
+                                                   <TableColumn fx:id="idBookcolumn" minWidth="100.0" prefWidth="100.0" text="ID" />
+                                                   <TableColumn fx:id="ISBNColumn" minWidth="200.0" prefWidth="200.0" text="ISBN" />
+                                                   <TableColumn fx:id="titlecolumn" minWidth="185.0" prefWidth="185.0" text="Title" />
+                                                   <TableColumn fx:id="aLastcolumn" minWidth="135.0" prefWidth="144.0" text="Author Last Name" />
+                                                   <TableColumn fx:id="aFirstcolumn" minWidth="150.0" prefWidth="171.0" text="Author First Name" />
+                                               </columns>
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                           </TableView>
+                                          <Label alignment="CENTER" text="Available Book List" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="32.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXComboBox fx:id="roleCombo" prefWidth="150.0" promptText="Select Role" GridPane.halignment="LEFT">
+                                              <items>
+                                                  <FXCollections fx:factory="observableArrayList">
+                                                      <String fx:value="Student" />
+                                                      <String fx:value="Teacher" />
+
+                                                  </FXCollections>
+                                              </items>
+                                             <GridPane.margin>
+                                                <Insets left="100.0" />
+                                             </GridPane.margin>
+                                          </JFXComboBox>
+                                          <JFXTextField fx:id="userField" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" promptText="Enter User ID" GridPane.halignment="LEFT">
+                                             <GridPane.margin>
+                                                <Insets left="300.0" />
+                                             </GridPane.margin>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="bookField" layoutX="10.0" layoutY="470.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Enter Book ID" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+                                             <GridPane.margin>
+                                                <Insets right="250.0" />
+                                             </GridPane.margin>
+                                          </JFXTextField>
+                                          <JFXButton fx:id="checkOutButton" mnemonicParsing="false" onAction="#checkOut" text="Check out" GridPane.halignment="RIGHT">
+                                             <GridPane.margin>
+                                                <Insets right="100.0" />
+                                             </GridPane.margin>
+                                          </JFXButton>
+                                          <JFXComboBox fx:id="comboP" layoutX="110.0" layoutY="470.0" prefHeight="27.0" prefWidth="188.0" promptText="Select Search Parameter" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                              <items>
+                                                  <FXCollections fx:factory="observableArrayList">
+                                                      <String fx:value="Book ID" />
+                                                      <String fx:value="ISBN" />
+                                                      <String fx:value="Author Last Name" />
+                                                      <String fx:value="Title" />
+
+                                                  </FXCollections>
+                                              </items>
+                                             <GridPane.margin>
+                                                <Insets right="500.0" />
+                                             </GridPane.margin>
+                                          </JFXComboBox>
+                                          <JFXTextField fx:id="keyword" layoutX="310.0" layoutY="470.0" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" promptText="Keyword" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                          <JFXButton fx:id="searchBooks" layoutX="929.0" layoutY="470.0" mnemonicParsing="false" onAction="#refreshBookList" text="Search" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="500.0" />
+                                             </GridPane.margin>
+                                          </JFXButton>
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                            </Tab>
+                            <Tab text="Return Book">
+                                <content>
+                                    <GridPane>
+                                        <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                                        </rowConstraints>
+                                        <children>
+                                            <TableView fx:id="checktable" maxHeight="200.0" maxWidth="800.0" minHeight="200.0" minWidth="800.0" prefHeight="200.0" prefWidth="800.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                                <columns>
+                                                    <TableColumn fx:id="idBookCheckcolumn" minWidth="100.0" prefWidth="100.0" text="ID" />
+                                                    <TableColumn fx:id="ISBNCheckColumn" minWidth="200.0" prefWidth="200.0" text="ISBN" />
+                                                    <TableColumn fx:id="titleCheckcolumn" minWidth="185.0" prefWidth="185.0" text="Title" />
+                                                    <TableColumn fx:id="aLastCheckcolumn" minWidth="135.0" prefWidth="144.0" text="Author Last Name" />
+                                                    <TableColumn fx:id="aFirstCheckcolumn" minWidth="150.0" prefWidth="171.0" text="Author First Name" />
+                                                </columns>
+                                                <GridPane.margin>
+                                                    <Insets />
+                                                </GridPane.margin>
+                                            </TableView>
+                                            <Label alignment="CENTER" text="Available Book List" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font size="32.0" />
+                                                </font>
+                                            </Label>
+                                            <JFXComboBox fx:id="roleCheckCombo" prefWidth="150.0" promptText="Select Role" GridPane.halignment="LEFT">
+                                                <items>
+                                                    <FXCollections fx:factory="observableArrayList">
+                                                        <String fx:value="Student" />
+                                                        <String fx:value="Teacher" />
+
+                                                    </FXCollections>
+                                                </items>
+                                                <GridPane.margin>
+                                                    <Insets left="100.0" />
+                                                </GridPane.margin>
+                                            </JFXComboBox>
+                                            <JFXTextField fx:id="userCheckField" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" promptText="Enter User ID" GridPane.halignment="LEFT">
+                                                <GridPane.margin>
+                                                    <Insets left="300.0" />
+                                                </GridPane.margin>
+                                            </JFXTextField>
+                                            <JFXTextField fx:id="bookCheckField" layoutX="10.0" layoutY="470.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Enter Book ID" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+                                                <GridPane.margin>
+                                                    <Insets right="250.0" />
+                                                </GridPane.margin>
+                                            </JFXTextField>
+                                            <JFXButton fx:id="checkInButton" mnemonicParsing="false" onAction="#checkIn" text="Check out" GridPane.halignment="RIGHT">
+                                                <GridPane.margin>
+                                                    <Insets right="100.0" />
+                                                </GridPane.margin>
+                                            </JFXButton>
+                                            <JFXComboBox fx:id="comboCheckP" layoutX="110.0" layoutY="470.0" prefHeight="27.0" prefWidth="188.0" promptText="Select Search Parameter" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                                <items>
+                                                    <FXCollections fx:factory="observableArrayList">
+                                                        <String fx:value="Student" />
+                                                        <String fx:value="Teacher" />
+
+
+                                                    </FXCollections>
+                                                </items>
+                                                <GridPane.margin>
+                                                    <Insets right="500.0" />
+                                                </GridPane.margin>
+                                            </JFXComboBox>
+                                            <JFXTextField fx:id="userIDCheck" layoutX="310.0" layoutY="470.0" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" promptText="Enter User ID" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                            <JFXButton fx:id="searchUsers" layoutX="929.0" layoutY="470.0" mnemonicParsing="false" onAction="#refreshBookCheckList" text="Search" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                                <GridPane.margin>
+                                                    <Insets left="500.0" />
+                                                </GridPane.margin>
+                                            </JFXButton>
+                                        </children>
+                                    </GridPane>
+                                </content>
+                            </Tab>
+                          </tabs>
+                           <GridPane.margin>
+                              <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                           </GridPane.margin>
+                        </TabPane>
+                         <JFXButton fx:id="backButton" alignment="CENTER" buttonType="RAISED" layoutX="113.0" layoutY="154.0" maxWidth="324.0" minWidth="324.0" mnemonicParsing="false" onAction="#backButtonClicked" prefWidth="324.0" style="-fx-background-color: #00000000; -fx-background-image: url('/sample/images/icons8-return.png'); -fx-background-repeat: no-repeat;" text="Back" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                             <font>
+                                 <Font size="43.0" />
+                             </font>
+                         </JFXButton>
+                     </children>
+
+                        </GridPane>
+                    </children></StackPane>
+            </children></VBox>
+    </children>
+</AnchorPane>

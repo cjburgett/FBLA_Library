@@ -1,0 +1,18 @@
+.root{
+    -fx-text-fill: white;
+}
+
+.text-area{
+    -fx-text-fill: white;
+    overflow:hidden;
+}
+
+.title{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.userPass{
+    -fx-background-color: transparent;
+    -fx-text-fill: #243752;
+}
